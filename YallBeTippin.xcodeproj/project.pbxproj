@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A2D63D222D53D09C00E44BDF /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D63D212D53D09C00E44BDF /* MenuItem.swift */; };
 		A2D63D242D53D15200E44BDF /* MenuListview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D63D232D53D15200E44BDF /* MenuListview.swift */; };
+		A2D63D262D54F64A00E44BDF /* MenuListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D63D252D54F64A00E44BDF /* MenuListVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		A2D63D0B2D53CCE600E44BDF /* YallBeTippinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YallBeTippinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D63D212D53D09C00E44BDF /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		A2D63D232D53D15200E44BDF /* MenuListview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListview.swift; sourceTree = "<group>"; };
+		A2D63D252D54F64A00E44BDF /* MenuListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -105,6 +107,7 @@
 		A2D63D1E2D53CE9C00E44BDF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A2D63D252D54F64A00E44BDF /* MenuListVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2D63D222D53D09C00E44BDF /* MenuItem.swift in Sources */,
+				A2D63D262D54F64A00E44BDF /* MenuListVM.swift in Sources */,
 				A2D63D242D53D15200E44BDF /* MenuListview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
