@@ -12,7 +12,7 @@ struct MenuListview: View {
     
     var body: some View {
         List($vm.items) { $item in
-            Text(item.name)
+            MenuItemView(item: $item)
         }
         .navigationTitle("Menu")
     }
