@@ -18,5 +18,14 @@ import Observation
            MenuItem(name: "Spaghetti", price: 13.5, img: "spaghetti"),
            MenuItem(name: "Steak", price: 16, img: "steak"),
            MenuItem(name: "Sushi", price: 8, img: "sushi")
-       ]
+     ] {
+         didSet {
+             let sum = items.reduce(0) {
+                 $0 + ($1.price * Double($1.orderCount))
+             }
+             total = sum
+         }
+     }
+    
+    var total: Double = 0
 }

@@ -17,50 +17,57 @@ struct MenuItemView: View {
                     .font(.title2)
                     .fontWeight(.medium)
                 
-                Text("\(item.price)")
+                Text(item.price.toCurrency())
                     .font(.title3)
             }
             
             Spacer()
             
-            VStack(alignment: .center, spacing: 5) {
-                Button {
-                    print("plus button tapped")
-                } label: {
-                    ZStack{
-                        Circle()
-                            .fill(Color.blue)
-                        
-                        Image(systemName: "plus")
-                            .symbolRenderingMode(.monochrome)
-                            .foregroundStyle(.white)
+            if item.orderCount > 0 {
+                VStack(alignment: .center, spacing: 5) {
+                    Button {
+                        item.orderCount += 1
+                    } label: {
+                        ZStack{
+                            Circle()
+                                .fill(Color.blue)
+                            
+                            Image(systemName: "plus")
+                                .symbolRenderingMode(.monochrome)
+                                .foregroundStyle(.white)
+                        }
+                    }
+                    
+                    Text("\(item.orderCount)")
+                    
+                    Button {
+                        item.orderCount -= 1
+                    } label: {
+                        ZStack{
+                            Circle()
+                                .fill(Color.blue)
+                            
+                            Image(systemName: "minus")
+                                .symbolRenderingMode(.monochrome)
+                                .foregroundStyle(.white)
+                        }
                     }
                 }
-                
-                Text("\(item.orderCount)")
-                
-                Button {
-                    print("minus button tapped")
-                } label: {
-                    ZStack{
-                        Circle()
-                            .fill(Color.blue)
-                        
-                        Image(systemName: "minus")
-                            .symbolRenderingMode(.monochrome)
-                            .foregroundStyle(.white)
-                    }
-                }
+                .buttonStyle(.borderless)
             }
+            
             Image(item.img)
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 20))
         }
         .frame(maxHeight: 100)
+        .onTapGesture {
+            item.orderCount += 1
+        }
     }
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    MenuItemView(item: .constant(MenuItem(name: "Burger", price: 12.5, img: "burger")))
+    MenuItemView(item: .constant(MenuItem(name: "Burger", price: 12.5, img: "burger", orderCount: 1)))
 }
