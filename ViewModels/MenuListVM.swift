@@ -9,6 +9,12 @@ import Foundation
 import Observation
 
 @Observable final class MenuListVM {
+    enum Screen: String {
+        case fullMenu, cart, tip, receipt
+    }
+    
+    var path: [Screen] = []
+    
      var items: [MenuItem] = [
            MenuItem(name: "Burger", price: 12.5, img: "burger"),
            MenuItem(name: "Chow mein", price: 13, img: "chowMein"),
