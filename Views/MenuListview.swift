@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct MenuListview: View {
-    @State var vm = MenuListVM()
+    @Environment(MenuListVM.self) private var vm
     @State private var showAlert = false
     
     var body: some View {
+        @Bindable var vm = vm
         List($vm.items) { $item in
             MenuItemView(item: $item)
         }
