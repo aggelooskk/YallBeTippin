@@ -26,7 +26,7 @@ struct MenuListView: View {
             if path == .cart {
                 MenuListView(showFullMenu: false)
             } else if path == .tip {
-                // navigate to TipView()
+               TipView()
             }
         }
         .toolbar {
@@ -42,7 +42,7 @@ struct MenuListView: View {
               }
             } else {
                Button("Submit") {
-                //navigation to tipview
+                   vm.path.append(.tip)
             }
         }
     }

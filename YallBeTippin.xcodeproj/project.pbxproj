@@ -11,6 +11,7 @@
 		A2D63D242D53D15200E44BDF /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D63D232D53D15200E44BDF /* MenuListView.swift */; };
 		A2D63D262D54F64A00E44BDF /* MenuListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D63D252D54F64A00E44BDF /* MenuListVM.swift */; };
 		A2D63D282D5930BD00E44BDF /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D63D272D5930BD00E44BDF /* MenuItemView.swift */; };
+		A2D63D2C2D5BBBA500E44BDF /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D63D2B2D5BBBA500E44BDF /* TipView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		A2D63D232D53D15200E44BDF /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 		A2D63D252D54F64A00E44BDF /* MenuListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListVM.swift; sourceTree = "<group>"; };
 		A2D63D272D5930BD00E44BDF /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		A2D63D2B2D5BBBA500E44BDF /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -119,6 +121,7 @@
 			children = (
 				A2D63D232D53D15200E44BDF /* MenuListView.swift */,
 				A2D63D272D5930BD00E44BDF /* MenuItemView.swift */,
+				A2D63D2B2D5BBBA500E44BDF /* TipView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2D63D2C2D5BBBA500E44BDF /* TipView.swift in Sources */,
 				A2D63D222D53D09C00E44BDF /* MenuItem.swift in Sources */,
 				A2D63D262D54F64A00E44BDF /* MenuListVM.swift in Sources */,
 				A2D63D242D53D15200E44BDF /* MenuListView.swift in Sources */,
