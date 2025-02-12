@@ -34,10 +34,29 @@ import Observation
      }
     
     var tipPercentage: TipPercentage = .none {
-        didSet {
-            total *= TipPercentage.rawValue
-        }
-    }
+          didSet {
+              total *= tipPercentage.rawValue
+          }
+      }
     
     var total: Double = 0
+    
+    var receiptItems : [MenuItem] = []
+    
+    var receiptTip: FinalReceiptItem?
+    var receiptTotal: FinalReceiptItem?
+    
+    func calculate() {
+        for item in items where item.orderCount > 0 {
+            receiptItems.append(item)
+        }
+        receiptTip = FinalReceiptItem(title: "Tip", value: tipPercentage.toString())
+        receiptTotal = FinalReceiptItem(title: "Total", value: total.toCurrency())
+    }
+    
+    func reset() {
+        receiptItems = []
+        receiptTip = nil
+        receiptTotal = nil
+    }
 }

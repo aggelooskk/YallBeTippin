@@ -20,7 +20,7 @@ struct ContentView: View {
                     } else if path == .tip {
                        TipView()
                     } else if path == .receipt {
-                        // navigate to receiptview
+                        ReceiptView()
                     }
                 }
         }
