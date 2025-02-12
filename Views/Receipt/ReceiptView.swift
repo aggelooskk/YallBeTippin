@@ -32,7 +32,12 @@ struct ReceiptView: View {
             vm.calculate()
         }
         .onDisappear {
-            
+            vm.reset()
+        }
+        .toolbar {
+            Button("Reset") {
+                vm.path = []
+            }
         }
     }
 }
