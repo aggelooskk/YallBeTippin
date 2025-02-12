@@ -27,11 +27,17 @@ import Observation
      ] {
          didSet {
              let sum = items.reduce(0) {
-                 $0 + ($1.price * Double($1.orderCount))
+                 $0 + $1.total
              }
-             total = sum
+             total = sum * tipPercentage.rawValue
          }
      }
+    
+    var tipPercentage: TipPercentage = .none {
+        didSet {
+            total *= TipPercentage.rawValue
+        }
+    }
     
     var total: Double = 0
 }

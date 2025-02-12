@@ -14,6 +14,15 @@ struct ContentView: View {
         NavigationStack(path: $vm.path) {
             MenuListView(showFullMenu: true)
                 .navigationBarTitleDisplayMode(.inline)
+                .navigationDestination(for: MenuListVM.Screen.self) { path in
+                    if path == .cart {
+                        MenuListView(showFullMenu: false)
+                    } else if path == .tip {
+                       TipView()
+                    } else if path == .receipt {
+                        // navigate to receiptview
+                    }
+                }
         }
         .environment(vm)
     }

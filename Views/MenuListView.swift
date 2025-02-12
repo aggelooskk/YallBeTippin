@@ -22,13 +22,6 @@ struct MenuListView: View {
             }
         }
         .navigationTitle(showFullMenu ? "Menu" : "Cart")
-        .navigationDestination(for: MenuListVM.Screen.self) { path in
-            if path == .cart {
-                MenuListView(showFullMenu: false)
-            } else if path == .tip {
-               TipView()
-            }
-        }
         .toolbar {
             if showFullMenu {
                 Button {

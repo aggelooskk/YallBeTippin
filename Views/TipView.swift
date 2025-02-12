@@ -8,54 +8,26 @@
 import SwiftUI
 
 struct TipView: View {
+    @Environment(MenuListVM.self) private var vm
+    
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             VStack(alignment: .center, spacing: 10) {
-                Button {
-                    print("Button tapped")
-                } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(.black)
-                        
-                        Text("18%")
-                            .font(.largeTitle)
-                            .foregroundStyle(.white)
-                    }
-                }
-                Button {
-                    print("Button tapped")
-                } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(.black)
-                        
-                        Text("20%")
-                            .font(.largeTitle)
-                            .foregroundStyle(.white)
-                    }
-                }
-                Button {
-                    print("Button tapped")
-                } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(.black)
-                        
-                        Text("22%")
-                            .font(.largeTitle)
-                            .foregroundStyle(.white)
-                    }
-                }
+                TipButton(tip: .small)
+                    
+                TipButton(tip: .medium)
+                    
+                TipButton(tip: .large)
+                
             }
             .padding(.horizontal)
             
             Button {
-                print("skip button tapped")
+                vm.tipPercentage = .none
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(.blue)
+                        .fill(vm.tipPercentage == .none ? .blue : .black)
                     Text("Skip")
                         .font(.largeTitle)
                         .foregroundStyle(.white)
@@ -63,6 +35,13 @@ struct TipView: View {
             }
             .frame(maxHeight: 70)
             .padding(.horizontal)
+        }
+        .navigationTitle("Just gonna ask a question")
+        
+        .toolbar {
+            Button("Confirm") {
+                vm.path.append(.receipt)
+            }
         }
     }
 }
